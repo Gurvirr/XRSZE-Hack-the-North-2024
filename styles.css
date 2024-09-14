@@ -125,3 +125,27 @@ body {
     white-space: nowrap;
     z-index: 1;
 }
+
+.typing-text {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-family: "Pixelify";
+    font-size: 60px;
+    white-space: nowrap;
+    z-index: 1;
+    border-right: 2px solid #ffffff; 
+    animation: blink-caret 0.75s step-end infinite; 
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #ffffff;
+    }
+
+}
