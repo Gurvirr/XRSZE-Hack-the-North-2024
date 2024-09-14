@@ -1,0 +1,127 @@
+body {
+    background-color: #111218;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    position: relative;
+}
+
+@font-face {
+    font-family: "Dimension";
+    src: url("./assets/fonts/Dimension.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Neue";
+    src: url("./assets/fonts/NeueHaasDisplayMedium.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Pixelify";
+    src: url("./assets/fonts/PixelifySans-SemiBold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.rounded_rectangle {
+    width: 1400px;
+    height: 120px;
+    border-radius: 60px;
+    background: #181B26;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    padding-left: 130px;
+    padding-right: 130px;
+    box-sizing: border-box;
+    transform: scale(0.9);
+    transform-origin: center;
+    margin-top: 30px;
+    z-index: 1;
+}
+
+.left-menu, .right-menu {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.left-menu {
+    margin-right: auto;
+}
+
+.right-menu {
+    margin-left: auto;
+}
+
+.left-menu p, .right-menu p {
+    color: #eace90;
+    font-family: "Neue";
+    font-size: 20px;
+}
+
+.center-section {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.center-section img {
+    height: 15px;
+}
+
+.center-text {
+    color: #eace90;
+    font-family: "Dimension";
+    font-size: 80px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 20px;
+    color: #eace90;
+    font-family: "Neue";
+    font-size: 20px;
+    z-index: 1;
+}
+
+.background-logo {
+    position: absolute;
+    margin-top: 60px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.7);
+    z-index: 0;
+}
+
+.welcome-text {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #eace90;
+    font-family: "Neue";
+    font-size: 90px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.fitness-text {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    font-family: "Pixelify";
+    font-size: 60px;
+    white-space: nowrap;
+    z-index: 1;
+}
