@@ -60,8 +60,18 @@ body {
     margin-left: auto;
 }
 
-.left-menu p, .right-menu p {
+.left-menu a, .right-menu a {
+    text-decoration: none;
     color: #eace90;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.left-menu a:hover, .right-menu a:hover {
+    color: #f4d36a;
+    transform: scale(1.1);
+}
+
+.left-menu p, .right-menu p {
     font-family: "Neue";
     font-size: 20px;
 }
@@ -147,5 +157,4 @@ body {
     50% {
         border-color: #ffffff;
     }
-
 }
