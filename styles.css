@@ -95,12 +95,11 @@ body {
 }
 
 .footer {
-    position: absolute;
-    bottom: 20px;
     color: #eace90;
     font-family: "Neue";
     font-size: 20px;
-    z-index: 1;
+    text-align: center;
+    padding: 20px;
 }
 
 .background-logo {
@@ -113,61 +112,21 @@ body {
 }
 
 .welcome-text {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     color: #eace90;
     font-family: "Neue";
     font-size: 90px;
     white-space: nowrap;
     z-index: 1;
-}
-
-.fitness-text {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
-    font-family: "Pixelify";
-    font-size: 60px;
-    white-space: nowrap;
-    z-index: 1;
-}
-
-.typing-text {
-    position: absolute;
-    top: 55%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #ffffff;
-    font-family: "Pixelify";
-    font-size: 60px;
-    white-space: nowrap;
-    z-index: 1;
-    border-right: 2px solid #ffffff; 
-    animation: blink-caret 0.75s step-end infinite; 
-}
-
-@keyframes blink-caret {
-    from, to {
-        border-color: transparent;
-    }
-    50% {
-        border-color: #ffffff;
-    }
+    margin-bottom: 20px;
 }
 
 .container {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-}
-
-h1 {
-    text-align: center;
-    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #chat-container {
@@ -175,10 +134,12 @@ h1 {
     border-radius: 5px;
     padding: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 225%;
 }
 
 #chat-messages {
     height: 400px;
+    width: 100%;
     overflow-y: auto;
     margin-bottom: 20px;
     padding: 10px;
