@@ -4,7 +4,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 750px;
+    height: 725px;
     position: relative;
 }
 
@@ -99,7 +99,7 @@ body {
     bottom: 5px;
     color: #eace90;
     font-family: "Neue";
-    font-size: 20px;
+    font-size: 15px;
     z-index: 1;
 }
 
@@ -124,7 +124,7 @@ body {
 }
 
 .fitness-text {
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffffff;
@@ -136,12 +136,12 @@ body {
 
 .typing-text {
     position: absolute;
-    top: 55%;
+    top: 56%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffffff;
     font-family: "Pixelify";
-    font-size: 60px;
+    font-size: 90px;
     white-space: nowrap;
     z-index: 1;
     border-right: 2px solid #ffffff;
@@ -218,7 +218,7 @@ body {
     justify-content: center;
     align-items: center;
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin-top: 0;
