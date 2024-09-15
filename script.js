@@ -7,7 +7,6 @@
 
         const message = messageInput.value;
 
-        // Display user message
         displayMessage('user', message);
 
         try {
@@ -24,7 +23,6 @@
             console.log('Received response from server:', data);
 
             if (response.ok) {
-                // Display bot response
                 displayMessage('bot', data.reply);
             } else {
                 throw new Error(data.error || 'Unknown error occurred');
@@ -34,7 +32,6 @@
             displayMessage('bot', `An error occurred: ${error.message}. Please check the console for more details.`);
         }
 
-        // Clear input field
         messageInput.value = '';
     });
 
