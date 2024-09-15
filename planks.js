@@ -1,15 +1,15 @@
 const MODEL_PATH = 'https://tfhub.dev/mediapipe/tfjs-model/blazepose_3d/1/default/1';
 const VIDEO_SIZE = { width: 640, height: 480 };
 const MIN_CONFIDENCE = 0.5;
-const PLANK_THRESHOLD_SLOPE = 0.1; // Threshold for detecting plank start/stop based on body slope
+const PLANK_THRESHOLD_SLOPE = 0.1;
 
 let model, webcam, ctx, feedbackTimer;
 let isWorkoutStarted = false;
 let startTime;
 let elapsedTime = 0;
-let isInPlank = false; // To track whether the user is currently in a plank position
-let plankStartTime = 0; // Start time of plank
-let plankElapsedTime = 0; // Elapsed time for plank position
+let isInPlank = false;
+let plankStartTime = 0;
+let plankElapsedTime = 0;
 
 async function setupWebcam() {
     webcam = document.getElementById('webcam');
@@ -38,7 +38,7 @@ function startWorkout() {
     if (!isWorkoutStarted) {
         isWorkoutStarted = true;
         plankStartTime = Date.now();
-        detectPose(); // Start detecting the pose
+        detectPose();
     }
 }
 
@@ -77,17 +77,16 @@ function analyzePlank(keypoints) {
     let hipAngle = calculateAngle(leftShoulder, leftHip, leftAnkle);
     let bodySlope = calculateSlope(nose, leftAnkle);
 
-    // Update feedback to the user
     if (Math.abs(bodySlope) > PLANK_THRESHOLD_SLOPE) {
         feedback.push("Keep your body straight from head to toe.");
         if (isInPlank) {
             isInPlank = false;
-            plankElapsedTime += Date.now() - plankStartTime; // Stop the plank timer
+            plankElapsedTime += Date.now() - plankStartTime;
         }
     } else {
         if (!isInPlank) {
             isInPlank = true;
-            plankStartTime = Date.now(); // Start the plank timer
+            plankStartTime = Date.now();
         }
     }
 
@@ -95,7 +94,6 @@ function analyzePlank(keypoints) {
         feedback.push("Adjust your hip position to be between 150° and 180°.");
     }
 
-    // Update the error box with these values
     document.getElementById('currentFeedback').textContent = feedback.length === 0 ? 'Good form!' : feedback.join(" ");
     document.getElementById('hipAngle').textContent = `Hip Angle: ${hipAngle.toFixed(2)}°`;
     document.getElementById('bodySlope').textContent = `Body Slope: ${bodySlope.toFixed(3)}`;
@@ -121,11 +119,10 @@ function calculateDistance(point1, point2) {
     return Math.sqrt(Math.pow(point2.x - point1.x, 2) + Math.pow(point2.y - point1.y, 2));
 }
 
-// Initialize the backend
 async function initializeBackend() {
     try {
-        await tf.setBackend('webgl'); // Set WebGL as the backend
-        await tf.ready(); // Ensure TensorFlow.js is ready
+        await tf.setBackend('webgl');
+        await tf.ready();
         console.log("WebGL backend is initialized.");
     } catch (error) {
         console.error("WebGL not supported, switching to CPU");
@@ -152,11 +149,11 @@ async function detectPose() {
 }
 
 async function startPlanks() {
-    await initializeBackend(); // Initialize WebGL or CPU backend
-    await setupWebcam(); // Setup webcam stream
-    await loadModel(); // Load the BlazePose model
-    await setupCanvas(); // Setup canvas for drawing
-    startWorkout(); // Start the plank workout
+    await initializeBackend();
+    await setupWebcam();
+    await loadModel();
+    await setupCanvas();
+    startWorkout();
 }
 
-startPlanks(); // Initialize and start the plank workout when the page loads
+startPlanks();

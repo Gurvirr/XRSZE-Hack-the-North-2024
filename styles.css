@@ -1,4 +1,3 @@
-/* General styles */
 body {
     background-color: #111218;
     margin: 0;
@@ -30,7 +29,6 @@ body {
     font-style: normal;
 }
 
-/* Layout */
 .rounded_rectangle {
     width: 1400px;
     height: 120px;
@@ -98,7 +96,7 @@ body {
 
 .footer {
     position: absolute;
-    bottom: 20px;
+    bottom: 5px;
     color: #eace90;
     font-family: "Neue";
     font-size: 20px;
@@ -123,7 +121,7 @@ body {
     font-family: "Neue";
     font-size: 90px;
     white-space: nowrap;
-    z-index: 10;  /* Ensure button is clickable */
+    z-index: 10;
 }
 
 .fitness-text {
@@ -148,8 +146,8 @@ body {
     font-size: 60px;
     white-space: nowrap;
     z-index: 1;
-    border-right: 2px solid #ffffff; 
-    animation: blink-caret 0.75s step-end infinite; 
+    border-right: 2px solid #ffffff;
+    animation: blink-caret 0.75s step-end infinite;
 }
 
 @keyframes blink-caret {
@@ -161,7 +159,6 @@ body {
     }
 }
 
-/* Layout for error box and camera */
 .camera-container {
     position: relative;
     display: flex;
@@ -170,25 +167,24 @@ body {
 }
 
 .error-box, .camera-container {
-    width: 45%;  /* Each container takes up 45% of the width */
-    height: 100%;  /* Full height for both containers */
+    width: 45%;
+    height: 100%;
 }
 
 .error-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;  /* Center text vertically within the container */
-    align-items: center;  /* Center text horizontally */
-    text-align: center;  /* Ensure multi-line text is centered */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     color: #eace90;
     font-family: "Neue";
     font-size: 18px;
     z-index: 1;
-    padding-left: 10px;  /* Add a small padding to the text */
-    height: 100%;  /* Ensure it takes full height for centering */
+    padding-left: 10px;
+    height: 100%;
 }
 
-/* New Main Container for Error and Video Side-by-Side */
 .main-container {
     display: flex;
     justify-content: space-between;
@@ -219,45 +215,113 @@ body {
     height: 100%;
 }
 
-/* Button styles */
-/* Updated layout for Start and Exercise Buttons */
 .welcome-text, #exerciseButtons {
     display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 50%;  /* Move the container down 50% of the screen height */
-    left: 50%; /* Move the container from the left by 50% of the screen width */
-    transform: translate(-50%, -50%); /* Translate the container by -50% on both axes to center it */
-    margin-top: 0; /* Remove the margin since we're using transform for centering */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 0;
 }
 
-/* Container for the exercise buttons */
 #exerciseButtons {
     display: flex;
-    justify-content: center; /* Center the buttons horizontally */
-    align-items: center;  /* Center the buttons vertically */
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 50%;  /* Move the container down 50% of the screen height */
-    left: 50%; /* Move the container from the left by 50% of the screen width */
-    transform: translate(-50%, -50%); /* Translate the container back by 50% on both axes to center it */
-    gap: 30px; /* Add space between the buttons */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    gap: 30px;
 }
 
-/* Button styles */
 button {
     background-color: #eace90;
     border: none;
     color: #111218;
-    padding: 20px 40px;  /* Increase padding for a larger clickable area */
+    padding: 20px 40px;
     font-size: 24px;
     cursor: pointer;
     border-radius: 10px;
     font-family: "Neue";
-    z-index: 10; /* Ensure it is clickable */
+    z-index: 10;
 }
 
 button:hover {
     background-color: #f4d36a;
 }
 
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+#chat-container {
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    width: 1000px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    position: relative;
+}
+
+#chat-messages {
+    height: 400px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#chat-form {
+    display: flex;
+    gap: 10px;
+}
+
+#message {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.user-message {
+    background-color: #007bff;
+    color: #fff;
+    align-self: flex-end;
+}
+
+.bot-message {
+    background-color: #f1f1f1;
+    color: #333;
+    align-self: flex-start;
+}

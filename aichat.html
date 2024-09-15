@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon" />
-    <title>XRSZE - Docs</title>
+    <title>XRSZE - Chat</title>
 </head>
 <body>
     <div class="rounded_rectangle">
@@ -19,8 +19,18 @@
         </div>
 
         <div class="right-menu">
-            <a href="docs.html"><p>DOCS</p></a>
+            <a href="aichat.html"><p>AI CHAT</p></a>
             <a href="start.html"><p>START</p></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div id="chat-container">
+            <div id="chat-messages"></div>
+            <form id="chat-form">
+                <input type="text" id="message" placeholder="Type your message..." required>
+                <button type="submit">Send</button>
+            </form>
         </div>
     </div>
 
@@ -28,8 +38,8 @@
         © Hack the North 2024
     </div>
 
-    <img src="./assets/images/background_logo.png" alt="Background Logo" class="background-logo" />
+    <script src="script.js"></script>
 
-    <div class="welcome-text">Documentation</div>
+    <img src="./assets/images/background_logo.png" alt="Background Logo" class="background-logo" />
 </body>
 </html>
