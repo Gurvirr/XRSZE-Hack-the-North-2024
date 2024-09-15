@@ -4,7 +4,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh;
+    height: 750px;
     position: relative;
 }
 
@@ -113,25 +113,23 @@ body {
 }
 
 .welcome-text {
-    position: absolute;
-    top: 45%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #eace90;
     font-family: "Neue";
-    font-size: 90px;
+    font-size: 100px;
     white-space: nowrap;
-    z-index: 10;
+    z-index: 1;
 }
 
 .fitness-text {
-    position: absolute;
-    top: 55%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #ffffff;
     font-family: "Pixelify";
-    font-size: 60px;
+    font-size: 120px;
     white-space: nowrap;
     z-index: 1;
 }
