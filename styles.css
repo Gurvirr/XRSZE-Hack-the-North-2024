@@ -1,3 +1,4 @@
+/* General styles */
 body {
     background-color: #111218;
     margin: 0;
@@ -29,6 +30,7 @@ body {
     font-style: normal;
 }
 
+/* Layout */
 .rounded_rectangle {
     width: 1400px;
     height: 120px;
@@ -121,7 +123,7 @@ body {
     font-family: "Neue";
     font-size: 90px;
     white-space: nowrap;
-    z-index: 1;
+    z-index: 10;  /* Ensure button is clickable */
 }
 
 .fitness-text {
@@ -158,3 +160,104 @@ body {
         border-color: #ffffff;
     }
 }
+
+/* Layout for error box and camera */
+.camera-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.error-box, .camera-container {
+    width: 45%;  /* Each container takes up 45% of the width */
+    height: 100%;  /* Full height for both containers */
+}
+
+.error-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  /* Center text vertically within the container */
+    align-items: center;  /* Center text horizontally */
+    text-align: center;  /* Ensure multi-line text is centered */
+    color: #eace90;
+    font-family: "Neue";
+    font-size: 18px;
+    z-index: 1;
+    padding-left: 10px;  /* Add a small padding to the text */
+    height: 100%;  /* Ensure it takes full height for centering */
+}
+
+/* New Main Container for Error and Video Side-by-Side */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin-top: 50px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    width: 50%;
+    position: relative;
+}
+
+#webcam {
+    width: 100%;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+/* Button styles */
+/* Updated layout for Start and Exercise Buttons */
+.welcome-text, #exerciseButtons {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    position: absolute;
+    top: 50%;  /* Move the container down 50% of the screen height */
+    left: 50%; /* Move the container from the left by 50% of the screen width */
+    transform: translate(-50%, -50%); /* Translate the container by -50% on both axes to center it */
+    margin-top: 0; /* Remove the margin since we're using transform for centering */
+}
+
+/* Container for the exercise buttons */
+#exerciseButtons {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    align-items: center;  /* Center the buttons vertically */
+    position: absolute;
+    top: 50%;  /* Move the container down 50% of the screen height */
+    left: 50%; /* Move the container from the left by 50% of the screen width */
+    transform: translate(-50%, -50%); /* Translate the container back by 50% on both axes to center it */
+    gap: 30px; /* Add space between the buttons */
+}
+
+/* Button styles */
+button {
+    background-color: #eace90;
+    border: none;
+    color: #111218;
+    padding: 20px 40px;  /* Increase padding for a larger clickable area */
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 10px;
+    font-family: "Neue";
+    z-index: 10; /* Ensure it is clickable */
+}
+
+button:hover {
+    background-color: #f4d36a;
+}
+

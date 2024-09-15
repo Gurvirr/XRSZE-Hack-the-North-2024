@@ -1,9 +1,18 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise Monitor - Start</title>
+
+    <!-- TensorFlow.js and MediaPipe -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-core"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-converter"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-webgl"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/pose-detection"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision/vision_bundle.js" crossorigin="anonymous"></script>
+
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="./assets/images/favicon.png" type="image/x-icon" />
-    <title>XRSZE - Start</title>
 </head>
 <body>
     <div class="rounded_rectangle">
@@ -13,9 +22,7 @@
         </div>
 
         <div class="center-section">
-            <img src="./assets/images/header_dots.png" alt="Header Dots Left" />
             <p class="center-text">XRSZE</p>
-            <img src="./assets/images/header_dots.png" alt="Header Dots Right" />
         </div>
 
         <div class="right-menu">
@@ -28,8 +35,78 @@
         © Hack the North 2024
     </div>
 
-    <img src="./assets/images/background_logo.png" alt="Background Logo" class="background-logo" />
+    <!-- Start button -->
+    <div class="welcome-text" id="startButtonContainer">
+        <button id="startButton">Start Workout</button>
+    </div>
 
-    <div class="welcome-text">Start</div>
+    <!-- Exercise selection buttons -->
+    <div id="exerciseButtons" style="display:none; margin-top: 20px;">
+        <button id="planksButton">Planks</button>
+        <button id="highKneeButton">High Knee</button>
+    </div>
+
+    <!-- Container for Error Box and Video -->
+    <div class="main-container" style="display:none;" id="mainContainer">
+        <!-- Error Box for High Knee -->
+        <div class="error-box" id="highKneeErrorBox" style="display:none;">
+            <p id="status">Running...</p>
+            <p id="currentFeedback">Prepare for next rep</p>
+            <p id="Timer">Timer: 0</p>
+            <p id="kneeToHipDistance">Knee-to-Hip Distance: N/A</p>
+            <p id="minKneeToHipDistance">minKneeToHipDistance: 0</p>
+        </div>
+
+        <!-- Error Box for Planks -->
+        <div class="error-box" id="planksErrorBox" style="display:none;">
+            <p id="status">Running...</p>
+            <p id="currentFeedback">Prepare for next rep</p>
+            <p id="repCount">Reps: 0</p>
+            <p id="hipAngle">Hip Angle: N/A</p>
+            <p id="bodySlope">Body Slope: N/A</p>
+        </div>
+
+        <!-- Video and canvas on the right -->
+        <div class="video-container" id="camera-section">
+            <video id="webcam" width="640" height="480" autoplay playsinline></video>
+            <canvas id="canvas" width="640" height="480"></canvas>
+        </div>
+    </div>
+
+    <!-- Link to external JavaScript files -->
+    <script src="pose_estimation.js"></script>
+    <script src="planks.js"></script>
+
+    <script>
+        // Function to initialize event listeners
+        function initializeListeners() {
+            // Event listener for Start button
+            document.getElementById('startButton').addEventListener('click', function() {
+                document.getElementById('startButtonContainer').style.display = "none";  // Hide start button
+                document.getElementById('exerciseButtons').style.display = "block";  // Show exercise selection buttons
+            });
+
+            // Event listener for Planks button
+            document.getElementById('planksButton').addEventListener('click', function() {
+                document.getElementById('exerciseButtons').style.display = "none";  // Hide exercise buttons
+                document.getElementById('planksErrorBox').style.display = "block";  // Show planks error box
+                document.getElementById('highKneeErrorBox').style.display = "none";  // Hide high knee error box
+                document.getElementById('mainContainer').style.display = "flex";  // Show main container
+                startPlanks();  // Start planks.js function
+            });
+
+            // Event listener for High Knee button
+            document.getElementById('highKneeButton').addEventListener('click', function() {
+                document.getElementById('exerciseButtons').style.display = "none";  // Hide exercise buttons
+                document.getElementById('highKneeErrorBox').style.display = "block";  // Show high knee error box
+                document.getElementById('planksErrorBox').style.display = "none";  // Hide planks error box
+                document.getElementById('mainContainer').style.display = "flex";  // Show main container
+                startHighKneeDetection();  // Start high knee detection
+            });
+        }
+
+        // Initialize the listeners on page load
+        document.addEventListener('DOMContentLoaded', initializeListeners);
+    </script>
 </body>
 </html>
