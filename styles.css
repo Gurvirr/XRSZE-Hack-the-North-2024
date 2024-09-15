@@ -46,6 +46,19 @@ body {
     z-index: 1;
 }
 
+.midrounded_rectangle {
+    width: 1400px;
+    height: 700px;
+    border-radius: 60px;
+    background: #181B26;
+    padding: 50px 100px; /* Added more padding for better spacing */
+    box-sizing: border-box;
+    transform: scale(0.9);
+    margin-bottom: 20px;
+    transform-origin: center;
+    z-index: 1;
+}
+
 .left-menu, .right-menu {
     display: flex;
     align-items: center;
@@ -121,6 +134,50 @@ body {
     font-size: 100px;
     white-space: nowrap;
     z-index: 1;
+}
+
+.about-text {
+    margin-right: 850px;
+    margin-top: 20px;
+    color: #eace90;
+    font-family: "Neue";
+    font-size: 60px;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.about-description {
+    color: #ECEAE5;
+    font-family: "Neue";
+    font-size: 30px;
+    line-height: 1.8; /* Ensures readability */
+    text-align: justify; /* Aligns text evenly to both left and right edges */
+}
+
+.about-section {
+    margin-top: 50px;
+    color: #eace90;
+    font-family: "Neue";
+    font-size: 20px;
+    text-align: center;
+    width: 60%;
+    line-height: 1.8;
+}
+
+.about-section h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+
+.highlight {
+    color: #f4d36a; /* Example color, you can choose any other */
+    font-weight: bold; /* Optional, if you want to emphasize the words */
 }
 
 .fitness-text {
