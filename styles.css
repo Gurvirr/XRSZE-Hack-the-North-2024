@@ -51,7 +51,7 @@ body {
     height: 700px;
     border-radius: 60px;
     background: #181B26;
-    padding: 50px 100px; /* Added more padding for better spacing */
+    padding: 50px 100px;
     box-sizing: border-box;
     transform: scale(0.9);
     margin-bottom: 20px;
@@ -150,8 +150,8 @@ body {
     color: #ECEAE5;
     font-family: "Neue";
     font-size: 30px;
-    line-height: 1.8; /* Ensures readability */
-    text-align: justify; /* Aligns text evenly to both left and right edges */
+    line-height: 1.8;
+    text-align: justify;
 }
 
 .about-section {
@@ -174,10 +174,9 @@ body {
     margin-bottom: 15px;
 }
 
-
 .highlight {
-    color: #f4d36a; /* Example color, you can choose any other */
-    font-weight: bold; /* Optional, if you want to emphasize the words */
+    color: #f4d36a;
+    font-weight: bold;
 }
 
 .fitness-text {
@@ -236,11 +235,11 @@ body {
     font-family: "Neue";
     z-index: 1;
     padding-left: 10px;
-    height: 100%; 
+    height: 100%;
 }
 
 .error-box p {
-    font-size: 36px; 
+    font-size: 36px;
 }
 
 #repCount {
@@ -249,7 +248,7 @@ body {
 }
 
 #kneeToHipDistance, #currentFeedback, #status {
-    font-size: 40px; 
+    font-size: 40px;
 }
 
 .main-container {
@@ -339,7 +338,7 @@ h1 {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     z-index: 1;
     position: relative;
-}   
+}
 
 #chat-messages {
     height: 400px;
