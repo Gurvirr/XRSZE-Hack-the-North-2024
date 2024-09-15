@@ -1,3 +1,4 @@
+const cors = require('cors');
 const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
@@ -6,6 +7,7 @@ require('dotenv').config();
 const app = express();
 const port = 3000;
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 

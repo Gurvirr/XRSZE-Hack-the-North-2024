@@ -12,7 +12,7 @@
 
         try {
             console.log('Sending message to server:', message);
-            const response = await fetch('/chat', {
+            const response = await fetch('http://localhost:3000/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
