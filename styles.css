@@ -118,7 +118,7 @@ body {
 
 .background-logo {
     position: absolute;
-    margin-top: 60px;
+    margin-top: 80px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.7);
@@ -229,15 +229,27 @@ body {
 .error-box {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
-    text-align: center;
+    text-align: center; 
     color: #eace90;
     font-family: "Neue";
-    font-size: 18px;
     z-index: 1;
     padding-left: 10px;
-    height: 100%;
+    height: 100%; 
+}
+
+.error-box p {
+    font-size: 36px; 
+}
+
+#repCount {
+    font-size: 60px;
+    font-weight: bold;
+}
+
+#kneeToHipDistance, #currentFeedback, #status {
+    font-size: 40px; 
 }
 
 .main-container {
